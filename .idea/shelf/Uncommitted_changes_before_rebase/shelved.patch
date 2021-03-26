@@ -1,0 +1,34 @@
+Index: file2.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/file2.txt b/file2.txt
+--- a/file2.txt	(revision a8bacfb789381ca3b49d0e928019a4d115f1a82a)
++++ b/file2.txt	(date 1616672401769)
+@@ -1,0 +1,1 @@
++Git isas aq
+\ No newline at end of file
+Index: first.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\nasdsadsadsf\n\nHello git\nHello again\nsadas\nasd\nas\ndas\nda\ns\n\nasdsadsadsad
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/first.txt b/first.txt
+--- a/first.txt	(revision a8bacfb789381ca3b49d0e928019a4d115f1a82a)
++++ b/first.txt	(date 1616667667782)
+@@ -5,9 +5,4 @@
+ Hello again
+ sadas
+ asd
+-as
+-das
+-da
+-s
+-
+-asdsadsadsad
+\ No newline at end of file
++file1.tx
+\ No newline at end of file
