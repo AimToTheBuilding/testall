@@ -37,13 +37,7 @@ In the last example, note that the resulting string is Three \'s: "\\\". If you 
     'Time to
     start anew.';
 
-you probably noticed that nothing of interest happens. Perl gladly runs this program, but it produces no output.
-
-Thus, to begin to work with strings in Perl beyond simple hypothetical considerations, we need a way to have Perl display our strings for us. The canonical way of accomplishing this in Perl is to use the @builtin{print} function.
-
-The @builtin{print} function in Perl can be used in a variety of ways. The simplest form is to use the statement print STRING;, where STRING is any valid Perl string.
-
-So, to reconsider our examples, instead of simply listing the strings, we could instead print each one out:
+This book shows you how to create large, complex, dynamically driven web sites that look good and are a snap to maintain. You'll learn how to visualize multiple Mason-based solutions to any given problem and select among them. The book covers the latest line of Mason development 1.1x, which has many new features, including line number reporting based on source files, sub-requests, and easier use as a CGI.
 
     #!/usr/bin/perl
 

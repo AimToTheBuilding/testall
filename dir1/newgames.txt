@@ -18,14 +18,8 @@ For our first Perl program, we will ask the user their username, and print out a
 
 The first line is how the program is identified as a Perl program. All Perl programs should start with a line like #!/path/perl. Usually, it is just #!/usr/bin/perl. You should put this line at the top of each of your Perl programs.
 
-In the lines that follow, halfway through each line, there is a `#' character. Everything from the `#' character until the end of the line is considered a comment. You are not required to comment each line. In fact, commenting each line is rare. However, you will find in this text that we frequently put comments on every line, since we are trying to explain to the reader exactly what each Perl statement is doing. When you write Perl programs, you should provide comments, but you need not do so as verbosely as we do in this text.
-
-Note, too, that comments can also occur on lines by themselves. The last line of the program above is an example of that.
-
-Now, consider the code itself, ignoring everything that follows a `#' character. Notice that each line (ignoring comments) ends with a `;'. This is the way that you tell Perl that a statement is complete. We'll talk more about statements soon; for now, just consider a statement to be a single, logical command that you give to Perl.
-
-The first line, use strict, is called a pragma in Perl. It is not something that "explicitly" gets executed, from your point of view as the programmer. Instead, a pragma specifies (or changes) the rules that Perl uses to understand the code that follows. The use strict; pragma enforces the strictest possible rules for compiling the code. You should always use this pragma while you are still new to Perl, as it will help you find the errors in your code more easily.
-
+Perl FAQs are available as part of your Perl distribution with the
+perldoc perlfaq command. Read FAQs online at
 The second line is another pragma, use warnings. This pragma tells Perl that you'd like to be warned as much as possible when you write code that might be questionable. Certain features of Perl can confuse new (and sometimes even seasoned) Perl programmers. The use warnings pragma, like use strict, is a way to tell Perl that you'd like to be warned at run-time when certain operations seem questionable.
 
 So, you might wonder why two separate pragmas are needed. The reason is that they are enforced by Perl at different times. The use strict pragma enforces compile-time constraints on the program source code. You can even test them without running the program by using perl -c filename, where filename is the file containing your program. That option does not run your program, it merely checks that they syntax of your program is correct. (To remember this, remember that the letter `c' in `-c' stands for "check the program".)
