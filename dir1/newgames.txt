@@ -1,31 +1,19 @@
- So, to begin our study of Perl, let us consider a small Perl program. Do not worry that you are not familiar with all the syntax used here. The syntax will be introduced more formally as we continue on through this book. Just try to infer the behavior of the constructs below as best you can.
-
-For our first Perl program, we will ask the user their username, and print out a message greeting the user by name.
-
     #!/usr/bin/perl
 
-    use strict;                        # @cc{important pragma}
-    use warnings;                      # @cc{another important pragma}
-    print "What is your username?  ";  # @cc{print out the question}
-    my $username;                      # @cc{``declare'' the variable}
-    $username = <STDIN>;               # @cc{ask for the username}
-    chomp($username);                  # @cc{remove ``new line''}
-    print "Hello, $username.\n";       # @cc{print out the greeting}
+    use strict;
+    use warnings;
+    print "What is your username?  ";
+    my $username;
+    $username = <STDIN>;
+    chomp($username);
+    print "Hello, $username.\n";
 
     # @cc{Now we have said hello to our user}
 
  Let us examine this program line by line to ascertain its meaning. Some hand-waving will be necessary, since some of the concepts will not be presented until later. However, this code is simple enough that you need not yet understand completely what each line is doing.
 
-The first line is how the program is identified as a Perl program. All Perl programs should start with a line like #!/path/perl. Usually, it is just #!/usr/bin/perl. You should put this line at the top of each of your Perl programs.
 
 Perl FAQs are available as part of your Perl distribution with the
 perldoc perlfaq command. Read FAQs online at
-The second line is another pragma, use warnings. This pragma tells Perl that you'd like to be warned as much as possible when you write code that might be questionable. Certain features of Perl can confuse new (and sometimes even seasoned) Perl programmers. The use warnings pragma, like use strict, is a way to tell Perl that you'd like to be warned at run-time when certain operations seem questionable.
-
-So, you might wonder why two separate pragmas are needed. The reason is that they are enforced by Perl at different times. The use strict pragma enforces compile-time constraints on the program source code. You can even test them without running the program by using perl -c filename, where filename is the file containing your program. That option does not run your program, it merely checks that they syntax of your program is correct. (To remember this, remember that the letter `c' in `-c' stands for "check the program".)
-
-By contrast, the use warnings pragma controls run-time behavior. With use warnings, messages could be printed while your program runs, if Perl notices something wrong. In addition, different inputs to the program can cause different messages to be printed (or suppress such messages entirely).
-
-The third line is the first statement of the program the performs an action directly. It is a call to Perl's built-in @builtin{print} function. In this case, it is taking a string (enclosed in double quotes) as its argument, and sending that string to the standard output, which is, by default, the terminal, window, or console from which the program is run.
 
 The next line is a variable declaration. When in @module{strict} mode (set by the use strict pragma), all variables must be declared. In this case, Perl's @keyword{my} keyword is used to declare the variable @scalar{$username}. A variable like @scalar{$username} that starts with a $ is said to be a scalar variable. For more information on scalar variables, see 2. Working with Scalars. For now, just be aware that scalar variables can hold strings.
