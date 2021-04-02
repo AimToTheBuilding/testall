@@ -1,10 +1,68 @@
-both are good
-tea is cozy
-coffee helps to concentrate
-I love the smell of coffee in the morning
-coffee and cookies
-Tea is not selfish
-I love the smell of coffee in the morning(NOT NAPALM)
-tea and coffee resonate with situation
-both are amazing and very pleasxant
-need coffe rn
+ There are two characters in single quoted strings that do not always represent themselves. This is due to necessity, since single-quoted strings start and end with the `'' character. We need a way to express inside a single-quoted string that we want the string to contain a `'' character.
+
+The solution to this problem is to preceded any `'' characters we actually want to appear in the string itself with the backslash (`\' character). Thus we have strings like this:
+
+    'xxx\'xxx';  # xxx, a single-quote character, and then xxx
+
+We have in this example a string with 7 characters exactly. Namely, this is the string: xxx'xxx. It can be difficult at first to become accustomed to the idea that two characters in the input to Perl actually produce only one character in the string itself. (3) However, just keep in mind the rules and you will probably get used to them quickly.
+
+Since we have used the `\' character to do something special with the `'' character, we must now worry about the special cases for the backslash character itself. When we see a `\' character in a single-quoted string, we must carefully consider what will happen.
+
+Under most circumstances, when a `\' is in a single-quoted string, it is simply a backslash, representing itself, as most other characters do. However, the following exceptions apply:
+
+    The sequence `\'' yields the character `'' in the actual string. (This is the exception we already discussed above).
+
+    The sequence `\\' yields the character `\' in the actual string. In other words, two backslashes right next to each other actually yield only one backslash.
+
+    A backslash, by itself, cannot be placed at the end of a the single-quoted string. This cannot happen because Perl will think that you are using the `\' to escape the closing `''.
+
+The following examples exemplify the various exceptions, and use them properly:
+
+    'I don\'t think so.';          # Note the ' inside is escaped with \
+    'Need a \\ (backslash) or \?'; # The \\ gives us \, as does \
+    'You can do this: \\';         # A single backslash at the end 
+    'Three \\\'s: "\\\\\"';        # There are three \ chars between ""
+
+In the last example, note that the resulting string is Three \'s: "\\\". If you can follow that example, you have definitely mastered how single-quoted strings work!
+
+ Before we move on to our consideration of double-quoted strings, it is necessary to first consider a small digression. We know how to represent strings in Perl, but, as you may have noticed, the examples we have given thus far do not do anything interesting. If you try placing the statements that we listed as examples in 2.1.1 Single-quoted Strings, into a full Perl program, like this:
+
+    #!/usr/bin/perl
+
+    use strict;
+    use warnings;
+
+    'Three \\\'s: "\\\\\"'; # There are three \ chars between ""
+    'xxx\'xxx';             # xxx, a single-quote character, and then xxx
+    'Time to
+    start anew.';
+
+you probably noticed that nothing of interest happens. Perl gladly runs this program, but it produces no output.
+
+Thus, to begin to work with strings in Perl beyond simple hypothetical considerations, we need a way to have Perl display our strings for us. The canonical way of accomplishing this in Perl is to use the @builtin{print} function.
+
+The @builtin{print} function in Perl can be used in a variety of ways. The simplest form is to use the statement print STRING;, where STRING is any valid Perl string.
+
+So, to reconsider our examples, instead of simply listing the strings, we could instead print each one out:
+
+    #!/usr/bin/perl
+
+    use strict;
+    use warnings;
+
+    print 'Three \\\'s: "\\\\\"'; # Print first string
+    print 'xxx\'xxx';             # Print the second
+    print 'Time to
+    start anew.
+    ';    # Print last string, with a newline at the end
+
+This program will produce output. When run, the output goes to what is called the standard output. This is usually the terminal, console or window in which you run the Perl program. In the case of the program above, the output to the standard output is as follows:
+
+    Three \'s: "\\\"xxx'xxxTime to
+    start anew.
+
+Note that a newline is required to break up the lines. Thus, you need to put a newline at the end of every valid string if you want your string to be the last thing on that line in the output.
+
+Note that it is particularly important to put a newline on the end of the last string of your output. If you do not, often times, the command prompt for the command interpreter that you are using may run together with your last line of output, and this can be very disorienting. So, always remember to place a newline at the end of each line, particularly on your last line of output.
+
+Finally, you may have noticed that formatting your code with newlines in the middle of single-quoted strings hurts readability. Since you are inside a single-quoted string, you cannot change the format of the continued lines within the print statement, nor put comments at the ends of those lines because that would insert data into your single-quoted strings. To handle newlines more elegantly, you should use double-quoted strings, which are the topic of the next section.
