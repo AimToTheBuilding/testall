@@ -1,0 +1,13 @@
+ So, to begin our study of Perl, let us consider a small Perl program. Do not worry that you are not familiar with all the syntax used here. The syntax will be introduced more formally as we continue on through this book. Just try to infer the behavior of the constructs below as best you can.
+
+For our first Perl program, we will ask the user their username, and print out a message greeting the user by name.
+
+The first line, use strict, is called a pragma in Perl. It is not something that "explicitly" gets executed, from your point of view as the programmer. Instead, a pragma specifies (or changes) the rules that Perl uses to understand the code that follows. The use strict; pragma enforces the strictest possible rules for compiling the code. You should always use this pragma while you are still new to Perl, as it will help you find the errors in your code more easily.
+
+The second line is another pragma, use warnings. This pragma tells Perl that you'd like to be warned as much as possible when you write code that might be questionable. Certain features of Perl can confuse new (and sometimes even seasoned) Perl programmers. The use warnings pragma, like use strict, is a way to tell Perl that you'd like to be warned at run-time when certain operations seem questionable.
+
+The first line is how the program is identified as a Perl program. All Perl programs should start with a line like #!/path/perl. Usually, it is just #!/usr/bin/perl. You should put this line at the top of each of your Perl programs.
+
+By contrast, the use warnings pragma controls run-time behavior. With use warnings, messages could be printed while your program runs, if Perl notices something wrong. In addition, different inputs to the program can cause different messages to be printed (or suppress such messages entirely).
+
+The third line is the first statement of the program the performs an action directly. It is a call to Perl's built-in @builtin{print} function. In this case, it is taking a string (enclosed in double quotes) as its argument, and sending that string to the standard output, which is, by default, the terminal, window, or console from which the program is run.
