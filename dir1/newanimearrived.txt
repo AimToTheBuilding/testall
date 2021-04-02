@@ -6,18 +6,7 @@ Thus, at this point, we have the next line of the input (which is hopefully the 
 
 To take care of this, the next thing we do is chomp($username). Perl's built-in function, @builtin{chomp}, removes any newline characters that are on the end of a variable. So, after the @builtin{chomp} operation, the variable @scalar{$username}
 
-The final statement is another @builtin{print} statement. It uses the value of the @scalar{$username} variable to greet the user with her name. Note that it is acceptable to use @scalar{$username} inside of the string to be printed, and the contents of that scalar are included.
-
-This ends our discussion of our small Perl program. Now that you have some idea of what Perl programs look like, we can begin to look at Perl, its data types, and its constructs in detail.
-
- Scalar data are the most basic in Perl. Each scalar datum is logically a single entity. Scalars can be strings of characters or numbers. In Perl, you write literal scalar strings like this:
-
-For example, the strings "foobar" and 'baz' are scalar data. The numbers 3, 3.5 and -1 are also scalar data.
-
-Strings are always enclosed in some sort of quoting, the most common of which are single quotes, ", and and double quotes, "". We'll talk later about how these differ, but for now, you can keep in mind that any string of characters inside either type of quotes are scalar string data.
-
-Numbers are always written without quotes. Any numeric sequence without quotes are scalar number data.
-
+Mod_perl embeds the popular programming language Perl in the Apache web server, giving rise to a fast and powerful web programming environment. Written for Perl web developers and web administrators, Practical mod_perl is an extensive guide to the nuts and bolts of the powerful and popular combination of Apache and mod_perl. From writing and debugging scripts to keeping your server running without failures, the techniques in this book will help you squeeze every ounce of power out of your server. True to its title, this is the practical guide to mod_perl.
 In this chapter, we will take a look at the variety of scalar data available in Perl, the way to store them in variables, how to operate on them, and how to output them.
 
  Any sequence of ASCII characters put together as one unit, is a string. So, the word the is a string. This sentence is a string. Even this entire paragraph is a string. In fact, you could consider the text of this entire book as one string.
