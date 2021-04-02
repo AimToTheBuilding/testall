@@ -1,0 +1,42 @@
+ The next line, $username = <STDIN> is an assignment statement, which is denoted by the =. The left hand side of the assignment is that scalar variable, @scalar{$username}, that we declared in the line before it. Since @scalar{$username} is on the left hand side of the =, that indicates @scalar{$username} will be assigned a new value by this assignment statement.
+
+The right hand side of the assignment is a construct that allows us to get input from the keyboard, the default standard input. @fileh{STDIN} is called a file handle that represents the standard input. We will discuss more about file handles later. For now, just remember that the construct <STDIN>, when assigned to a scalar variable, places the next line of standard input into that scalar variable.
+
+Thus, at this point, we have the next line of the input (which is hopefully the username that we asked for), in the @scalar{$username} variable. Since we got the contents of @scalar{$username} from the standard input, we know that the user hit return after typing her username. The return key inserts a special character, called newline, at the end of the line. The @scalar{$username} variable contains the full contents of the line, which is not just the user's name, but also that newline character.
+
+To take care of this, the next thing we do is chomp($username). Perl's built-in function, @builtin{chomp}, removes any newline characters that are on the end of a variable. So, after the @builtin{chomp} operation, the variable @scalar{$username}
+
+The final statement is another @builtin{print} statement. It uses the value of the @scalar{$username} variable to greet the user with her name. Note that it is acceptable to use @scalar{$username} inside of the string to be printed, and the contents of that scalar are included.
+
+This ends our discussion of our small Perl program. Now that you have some idea of what Perl programs look like, we can begin to look at Perl, its data types, and its constructs in detail.
+
+ Scalar data are the most basic in Perl. Each scalar datum is logically a single entity. Scalars can be strings of characters or numbers. In Perl, you write literal scalar strings like this:
+
+For example, the strings "foobar" and 'baz' are scalar data. The numbers 3, 3.5 and -1 are also scalar data.
+
+Strings are always enclosed in some sort of quoting, the most common of which are single quotes, ", and and double quotes, "". We'll talk later about how these differ, but for now, you can keep in mind that any string of characters inside either type of quotes are scalar string data.
+
+Numbers are always written without quotes. Any numeric sequence without quotes are scalar number data.
+
+In this chapter, we will take a look at the variety of scalar data available in Perl, the way to store them in variables, how to operate on them, and how to output them.
+
+ Any sequence of ASCII characters put together as one unit, is a string. So, the word the is a string. This sentence is a string. Even this entire paragraph is a string. In fact, you could consider the text of this entire book as one string.
+
+Strings can be of any length and can contain any characters, numbers, punctuation, special characters (like `!', `#', and `%'), and even characters in natural languages besides English In addition, a string can contain special ASCII formatting characters like newline, tab, and the "bell" character. We will discuss special characters more later on. For now, we will begin our consideration of strings by considering how to insert literal strings into a Perl program.
+
+To begin our discussion of strings in Perl, we will consider how to work with "string literals" in Perl. The word literal here refers to the fact that these are used when you want to type a string directly to Perl. This can be contrasted with storing a string in a variable.
+
+Any string literal can be used as an expression. We will find this useful when we want to store string literals in variables. However, for now, we will simply consider the different types of string literals that one can make in Perl. Later, we will learn how to assign these string literals to variables (see section 2.3 Scalar Variables).
+
+
+
+[ < ] 	[ > ] 	  	[ << ] 	[ Up ] 	[ >> ] 	  	  	  	  	[Top] 	[Contents] 	[Index] 	[ ? ]
+2.1.1 Single-quoted Strings
+
+String literals can be represented in primarily three ways in Perl. The first way is in single quotes. Single quotes can be used to make sure that nearly all special characters that might be interpreted differently are taken at "face value". If that concept is confusing to you, just think about single quoted strings as being, for the most part, "what you see is what you get". Consider the following single-quoted string:
+
+    'i\o';  # The string 'i\o'
+
+This represents a string consisting of the character `i', followed by `\', followed by `o'. However, it is probably easier just to think of the string as @string{i\o}. Some other languages require you think of strings not as single chunks of data, but as some aggregation of a set of characters. Perl does not work this way. A string is a simple, single unit that can be as long as you would like.(2)
+
+Note in our example above that 'i\o' is an expression. Like all expressions, it evaluates to something. In this case, it evaluates to the string value, i\o. Note that we made the expression 'i\o' into a statement, by putting a semi-colon at the end ('i\o';). This particular statement does not actually perform any action in Perl, but it is still a valid Perl statement nonetheless.
