@@ -6,11 +6,14 @@ public class Item{
     private double itemPrice;
 
 
-    public Item (int itemID, String itemName, Owner itemOwner, double itemPrice){
-        this.itemName = itemName;
-        this.itemID = itemID;
-        this.itemOwner = itemOwner;
-        this.itemPrice = itemPrice;
+    public int getItemID(){
+        return this.itemID;
+        return this.itemID;return this.itemID;return this.itemID;return this.itemID;
+        return this.itemID;return this.itemID;
+        return this.itemID;
+
+
+
 
     }
 

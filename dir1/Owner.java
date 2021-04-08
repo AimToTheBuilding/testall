@@ -19,7 +19,4 @@ public class Owner {
         return this.ownerID;
     }
 
-    public String getOwnerName() {
-        return this.ownerName;
-    }
 }

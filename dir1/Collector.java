@@ -15,17 +15,17 @@ public class Collector extends Owner {
     public double itemBuy(Item itemToCollect){
 
         double priceToPay = itemToCollect.getItemPrice();
-
-        if(this.budget < priceToPay) {
-            System.out.println("Sorry, I can't afford this thing");
-            return 0;
-        }
-
-        System.out.println("Deal with it");
-
-        itemsCollection.add(itemToCollect);
-
-        this.budget -= priceToPay;
+//
+//        if(this.budget < priceToPay) {
+//            System.out.println("Sorry, I can't afford this thing");
+//            return 0;
+//        }
+//
+//        System.out.println("Deal with it");
+//
+//        itemsCollection.add(itemToCollect);
+//
+//        this.budget -= priceToPay;
 
         return priceToPay;
     }
